@@ -1,4 +1,6 @@
 using Berx3.Api.Data;
+using Berx3.Api.Models;
+using Berx3.Api.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,6 +15,8 @@ builder.Services.AddSwaggerGen();
 // Database connection
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddScoped<IRepository<User>, UserRepository>();
 
 var app = builder.Build();
 
