@@ -1,6 +1,6 @@
 @Berx3.Api_HostAddress = http://localhost:5233
 
-GET {{Berx3.Api_HostAddress}}/weatherforecast/
+GET {{Berx3.Api_HostAddress}}/api/users
 Accept: application/json
 
 ###
