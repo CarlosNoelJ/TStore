@@ -21,6 +21,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddScoped<IRepository<User>, UserRepository>();
+builder.Services.AddScoped<IRepository<TShirt>, TshirtRepository>();
 
 var app = builder.Build();
 
