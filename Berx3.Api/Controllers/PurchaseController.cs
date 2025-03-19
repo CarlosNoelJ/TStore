@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Berx3.Api.Repositories;
+using Berx3.Api.Request;
 
 namespace Berx3.Api.Controllers
 {
@@ -46,12 +47,5 @@ namespace Berx3.Api.Controllers
 
             return BadRequest(new { message = result });
         }
-    }
-
-    public class PurchaseRequest
-    {
-        public int UserId { get; set; }
-        public int TShirtId { get; set; }
-        public int Quantity { get; set; }
     }
 }
