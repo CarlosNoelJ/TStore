@@ -22,6 +22,8 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 builder.Services.AddScoped<IRepository<User>, UserRepository>();
 builder.Services.AddScoped<IRepository<TShirt>, TshirtRepository>();
+builder.Services.AddScoped<PurchaseRepository>();
+
 
 var app = builder.Build();
 
