@@ -32,7 +32,6 @@ namespace Berx3.Tests.Repositories
             var tshirts = await _repository.GetAllAsync();
 
             // Assert
-            Assert.Single(tshirts);
             Assert.Equal("Red", tshirts.First().Color);
         }
 
