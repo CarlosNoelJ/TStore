@@ -1,11 +1,13 @@
 ﻿using Berx3.Api.Models;
 using Berx3.Api.Repositories;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Berx3.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class UsersController : ControllerBase
     {
         private readonly IRepository<User> _userRepository;
