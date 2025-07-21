@@ -19,7 +19,9 @@ namespace Berx3.Api.Repositories
             
 
         public async Task<IEnumerable<User>> GetAllAsync()
-            => await _context.Users.ToListAsync();
+            => await _context.Users
+                .Where(u => u.IsActive)
+                .ToListAsync();
 
         public async Task<User?> GetByIdAsync(int id)
             => await _context.Users.FindAsync(id);

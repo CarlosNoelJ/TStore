@@ -26,7 +26,7 @@ namespace Berx3.Api.Controllers
         {
             var user = await _userRepository.GetByIdAsync(id);
             if (user == null)
-                NotFound();
+                return NotFound();
 
             return Ok(user);
         }
