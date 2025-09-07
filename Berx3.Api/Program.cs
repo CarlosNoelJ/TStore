@@ -53,7 +53,8 @@ builder.Services.AddSwaggerGen(c =>
 
 // Database connection
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseNpgsql(builder.Configuration.GetConnectionString("DB")));
+    // options.UseNpgsql(builder.Configuration.GetConnectionString("DBPSVM")));
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DBLocalHost")));
 
 builder.Services.AddScoped<IRepository<User>, UserRepository>();
 builder.Services.AddScoped<IRepository<TShirt>, TshirtRepository>();
